@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My red and orange Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff8400;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            background-color: #e60c00da;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 50px;
+            margin-top: 60px;
+        }
+        footer {
+            background-color: #e60f00d3;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Lightbox styles */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .gallery img {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 600px) {
+            .lightbox-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+ <a href="#contact">Contact</a>
+        <a href="#video">Video</a>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to My Red Website!</h1>
+        <p>This is a simple one-page website with an Red color theme.</p>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <img src="https://pixabay.com/fr/images/download/fusilier-tulip-7942127_1920.jpg" alt="Sample Image 1" width="300" onclick="openLightbox(this)">
+        <img src="https://pixabay.com/fr/photos/miroirs-orange-r%C3%A9flexion-pomme-7932159/" alt="Sample Image 2" width="300" onclick="openLightbox(this)">
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="rebar" required><br><br>
+            <input type="email" placeholder="https://github.com/marwan889999/JavaScript-Projects.git" required><br><br>
+            <textarea placeholder="welcome to my project i hope you love it"></textarea><br><br>
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <section id="video">
+        <h2>Watch This Video</h2>
+        <iframe width="914" height="514" src="https://www.youtube.com/embed/JVSQUJKAOx4" title="Facts About Oranges" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 My amazing red and orange Website</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        function openLightbox(imgElement) {
+            const modal = document.getElementById("lightbox");
+            const modalImg = document.getElementById("lightbox-img");
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        // Optional: close modal when clicking outside image
+        window.onclick = function(event) {
+            const modal = document.getElementById("lightbox");
+            if (event.target === modal) {
+                closeLightbox();
+            }
+        }
+    </script>
+
+</body>
+</html>
