@@ -1,0 +1,55 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #ff6347;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    background: #333;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+/* Recipe Section */
+.recipe-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+}
+
+h2 {
+    color: #ff6347;
+}
+
+/* About Section (Your Custom Requirement) */
+.about-section {
+    background-color: #e2e2e2;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+}
+
